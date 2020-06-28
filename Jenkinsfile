@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
 		script {
-			withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/') 
+			withDockerRegistry(credentialsId: 'dockerhub') 
                        {
                        def customImage = docker.build("rkdockerking/gamutkart:${BUILD_NUMBER}")
                        customImage.push()                      
